@@ -101,6 +101,7 @@ class ProjectController extends Controller
             'last_updated' => 'required|max:100',
             'main_language' => 'required|max:200',
             'slug' => 'nullable|max:70',
+            'type_id' => 'nullable'
         ], [
             'title.required' => 'Il titolo è obbligatorio',
             'title.max' => 'Il titolo deve avere massimo :max caratteri',
@@ -111,6 +112,10 @@ class ProjectController extends Controller
             'last_updated.max' => 'Il campo last_updated deve avere massimo :max caratteri',
             'main_language.required' => 'Il campo main_language è obbligatorio',
             'main_language.max' => 'Il campo main_language deve avere deve avere massimo :max caratteri',
+            'slug.nullable' => 'Il campo slug NON è obbligatorio',
+            'slug.max' => 'Il campo slug deve avere deve avere massimo :max caratteri',
+            'type_id.nullable' => 'Il campo type_id NON è obbligatorio',
+
         ])->validate();
 
         return $validator;

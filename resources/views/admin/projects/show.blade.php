@@ -8,8 +8,8 @@
         </div>
         <div class="cont-info d-flex gap-5">
             <span>{{ $project->main_language }}</span>
-            <span>{{ $project->last_updated }}</span>
-            <span>{{ $project->type->title }}</span>
+            <span>Ultima modifica: {{ $project->last_updated }}</span>
+            <span>Categoria: {{ $project->type->title }}</span>
         </div>
 
         <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning">Modifica</a>

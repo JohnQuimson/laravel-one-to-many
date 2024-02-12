@@ -9,7 +9,7 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $guarded = [''];
+    protected $guarded = [];
 
     //dipendente
     public function type()

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
@@ -34,6 +35,7 @@ class ProjectSeeder extends Seeder
 
         foreach ($projects as $project) {
 
+            $types = Type::inRandomOrder()->first();
 
             $newProject = new Project();
 
@@ -48,7 +50,7 @@ class ProjectSeeder extends Seeder
             $newProject->last_updated = $project['last_updated'];
             $newProject->main_language = $project['language'];
             $newProject->slug = Str::of($newProject->title)->slug('-');
-            // $newProject->type_id = $project['type_id'];
+            $newProject->type_id = $types->id;
 
             $newProject->save();
         }
