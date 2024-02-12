@@ -78,6 +78,21 @@
                     @enderror
                 </div>
 
+                {{-- Select Type --}}
+                <div class="mb-3">
+                    <label class="form-label">Type</label>
+                    <select class="form-select" aria-label="Default select example" name="type_id">
+                        <option selected>Select the type</option>
+                        @foreach ($types as $type)
+                            <option value="{{ $type->id }}">{{ $type->title }}</option>
+                        @endforeach
+
+                    </select>
+                </div>
+
+
+
+
                 <button type="submit" class="btn btn-success">Crea</button>
             </form>
             <div class="pt-5">
