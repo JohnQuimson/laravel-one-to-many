@@ -86,7 +86,6 @@
                         @foreach ($types as $type)
                             <option value="{{ $type->id }}" @if (old('type_id') == $type->id) selected @endif>{{ $type->title }}</option>
                         @endforeach
-
                     </select>
                 </div>
 

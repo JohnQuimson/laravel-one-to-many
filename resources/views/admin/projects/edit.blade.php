@@ -49,8 +49,17 @@
             <div class="mb-3">
                 <label class="form-label">main_language</label>
                 <input type="text" name="main_language" class="form-control" value="{{ old('main_language', $project->main_language) }}">
+            </div>
 
-
+            {{-- Select Type --}}
+            <div class="mb-3">
+                <label class="form-label">Type</label>
+                <select class="form-select" aria-label="Default select example" name="type_id">
+                    <option selected>Select the type</option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}" @if (old('type_id', $project->type_id) == $type->id) selected @endif>{{ $type->title }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <button type="submit" class="btn btn-success">Conferma modifica</button>
